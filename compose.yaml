@@ -1,0 +1,25 @@
+services:
+  php:
+    build: .
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+      - user_home:/home/user
+    tty: true
+  mysql:
+    image: mysql:8
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+volumes:
+  caddy_data:
+  caddy_config:
+  user_home:
+  mysql_data:
