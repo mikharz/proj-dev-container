@@ -1,0 +1,11 @@
+{
+  "dockerComposeFile": "../compose.yaml",
+  "service": "php",
+  "forwardPorts": [8080],
+  "workspaceFolder": "/",
+  "customizations": {
+    "jetbrains": {
+      "backend": "PhpStorm"
+    }
+  }
+}

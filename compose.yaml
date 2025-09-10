@@ -2,14 +2,9 @@ services:
   php:
     build: .
     ports:
-      - "80:80"
-      - "443:443"
-      - "443:443/udp"
+      - "8080:8080"
     volumes:
-      - caddy_data:/data
-      - caddy_config:/config
-      - user_home:/home/user
-    tty: true
+      - vscode_home:/home/vscode
   mysql:
     image: mysql:8
     environment:
@@ -19,7 +14,5 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
 volumes:
-  caddy_data:
-  caddy_config:
-  user_home:
+  vscode_home:
   mysql_data:
