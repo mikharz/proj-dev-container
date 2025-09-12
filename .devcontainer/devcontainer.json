@@ -2,7 +2,10 @@
   "dockerComposeFile": "../compose.yaml",
   "service": "php",
   "forwardPorts": [8080],
-  "workspaceFolder": "/",
+  "workspaceFolder": "/proj",
+  "mounts": [
+    "source=proj_core,target=${containerWorkspaceFolder}/core,type=volume"
+  ],
   "customizations": {
     "jetbrains": {
       "backend": "PhpStorm"
